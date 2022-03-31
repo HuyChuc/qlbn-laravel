@@ -57,3 +57,38 @@ $factory->define(App\Models\Faq::class, static function (Faker\Generator $faker)
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Category::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'code' => $faker->sentence,
+        'description' => $faker->sentence,
+        'parent_id' => $faker->sentence,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Category::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'code' => $faker->sentence,
+        'description' => $faker->sentence,
+        'parent_id' => $faker->randomNumber(5),
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Faq::class, static function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->text(),
+        'content' => $faker->text(),
+        'enabled' => $faker->boolean(),
+        'cat_id' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

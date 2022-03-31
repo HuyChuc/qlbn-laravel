@@ -10,12 +10,11 @@
                     <div class="tabs_tab tab_latest">
                         <ul>
                             @foreach ($latests as $latest)
-                             
                                 <li>
                                     <div class="alignleft">
                                         <figure>
                                             <a href="" title="Center for Medical Technology Innovation">
-                                                <img width="50" height="50" src="" class=" wp-post-image" alt="" title="" />		
+                                                <img width="50" height="50" src="{{$latest->getMediaUrl()}}" class=" wp-post-image" alt="" title="" />		
                                             </a>
                                         </figure>
                                     </div>

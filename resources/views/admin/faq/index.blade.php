@@ -50,14 +50,13 @@
                                         </th>
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.faq.columns.id') }}</th>
-                                        <th is='sortable' :column="'title'">{{ trans('admin.faq.columns.title') }}</th>
                                         <th is='sortable' :column="'enabled'">{{ trans('admin.faq.columns.enabled') }}</th>
-                                        <th is='sortable' :column="'image'">{{ trans('admin.faq.columns.image') }}</th>
+                                        <th is='sortable' :column="'cat_id'">{{ trans('admin.faq.columns.cat_id') }}</th>
 
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="6">
+                                        <td class="bg-bulk-info d-table-cell text-center" colspan="5">
                                             <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/faqs')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
                                                         href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
@@ -77,7 +76,6 @@
                                         </td>
 
                                     <td>@{{ item.id }}</td>
-                                        <td>@{{ item.title }}</td>
                                         <td>
                                             <label class="switch switch-3d switch-success">
                                                 <input type="checkbox" class="switch-input" v-model="collection[index].enabled" @change="toggleSwitch(item.resource_url, 'enabled', collection[index])">
@@ -85,7 +83,7 @@
                                             </label>
                                         </td>
 
-                                        <td>@{{ item.image }}</td>
+                                        <td>@{{ item.cat_id }}</td>
                                         
                                         <td>
                                             <div class="row no-gutters">

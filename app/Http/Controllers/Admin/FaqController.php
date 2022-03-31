@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\Faq\DestroyFaq;
 use App\Http\Requests\Admin\Faq\IndexFaq;
 use App\Http\Requests\Admin\Faq\StoreFaq;
 use App\Http\Requests\Admin\Faq\UpdateFaq;
+use App\Models\Category;
 use App\Models\Faq;
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
@@ -37,7 +38,7 @@ class FaqController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'title', 'enabled'],
+            ['id', 'enabled', 'cat_id'],
 
             // set columns to searchIn
             ['id', 'title', 'content']
@@ -64,8 +65,9 @@ class FaqController extends Controller
     public function create()
     {
         $this->authorize('admin.faq.create');
-
-        return view('admin.faq.create');
+        return view('admin.faq.create',[
+            'categories' => Category::all(),
+        ]);
     }
 
     /**
@@ -78,6 +80,7 @@ class FaqController extends Controller
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
+        $sanitized['cat_id'] = $request->getCatId();
         // Store the Faq
         $faq = Faq::create($sanitized);
 
@@ -116,7 +119,7 @@ class FaqController extends Controller
 
         return view('admin.faq.edit', [
             'faq' => $faq,
-        ]);
+        ],[ 'categories' => Category::all()]);
     }
 
     /**
@@ -130,7 +133,7 @@ class FaqController extends Controller
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
-
+        $sanitized['cat_id'] = $request->getCatId();
         // Update changed values Faq
         $faq->update($sanitized);
 

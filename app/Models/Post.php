@@ -18,19 +18,17 @@ class Post extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('gallery')
+        $this->addMediaCollection('cover')
             ->accepts('image/*')
             ->maxNumberOfFiles(1);
         ;
     }
 
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('detail_hd')
-            ->width(1920)
-            ->height(1080)
-            ->performOnCollections('gallery');
-        $this->autoRegisterThumb200();
+    public function getMediaUrl(){
+        $mediaItems = $this->getMedia('cover');
+        $publicUrl1 = $mediaItems[0]->getUrl();
+        $url = str_replace('localhost', 'localhost:8000', $publicUrl1);
+        return $url;
     }
 
     protected $fillable = [

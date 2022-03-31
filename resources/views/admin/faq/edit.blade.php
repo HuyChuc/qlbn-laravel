@@ -1,5 +1,3 @@
-
-
 @extends('brackets/admin-ui::admin.layout.default')
 
 @section('title', trans('admin.faq.actions.edit', ['name' => $faq->title]))
@@ -24,14 +22,7 @@
 
                     <div class="card-body">
                         @include('admin.faq.components.form-elements')
-                        @include('brackets/admin-ui::admin.includes.media-uploader', [
-                            'mediaCollection' => app(App\Models\Faq::class)->getMediaCollection('gallery'),
-                            'media' => $post->getThumbs200ForCollection('gallery'),
-                            'label' => 'Gallery'
-                        ])
                     </div>
-
-                   
                     
                     
                     <div class="card-footer">

@@ -4,39 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Brackets\Media\HasMedia\ProcessMediaTrait;
-use Brackets\Media\HasMedia\AutoProcessMediaTrait;
-use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Spatie\MediaLibrary\HasMedia;
-
-class Faq extends Model implements HasMedia
+class Faq extends Model
 {
-    use ProcessMediaTrait;
-    use AutoProcessMediaTrait;
-    use HasMediaCollectionsTrait;
-
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection('gallery');
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
-
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('detail_hd')
-            ->width(1920)
-            ->height(1080)
-            ->performOnCollections('gallery');
-    }
-    // end upload
-
     protected $table = 'faq';
 
     protected $fillable = [
         'title',
         'content',
         'enabled',
-        'image',
+        'cat_id',
     
     ];
     

@@ -5,7 +5,6 @@
 <section id="middle">
 
     <div class="content_wrap r_sidebar">
-
             <!--_________________________ Start Content _________________________ -->				
         <section id="content" role="main">
             <div class="entry">

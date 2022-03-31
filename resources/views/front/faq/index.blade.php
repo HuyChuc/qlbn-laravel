@@ -3,7 +3,14 @@
 
 @section('body')
 <section id="middle">
-
+    <div class="headline">
+        <h1>@yield('title')</h1>
+    </div>
+    <div class="cmsms_breadcrumbs">
+        <a href="/" class="cms_home">Trang chủ</a>
+        <span class="breadcrumbs_sep">/</span>
+        <span>@yield('title')</span>
+    </div>
     <div class="content_wrap r_sidebar">
         <section id="content" role="main">
             <div class="entry">

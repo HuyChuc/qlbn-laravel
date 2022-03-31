@@ -1,11 +1,8 @@
-
-
 @extends('brackets/admin-ui::admin.layout.default')
 
 @section('title', trans('admin.faq.actions.create'))
 
 @section('body')
-
     <div class="container-xl">
 
                 <div class="card">
@@ -23,12 +20,6 @@
 
                 <div class="card-body">
                     @include('admin.faq.components.form-elements')
-                    
-
-                    @include('brackets/admin-ui::admin.includes.media-uploader', [
-                        'mediaCollection' => app(App\Models\Faq::class)->getMediaCollection('gallery'),
-                        'label' => 'Gallery'
-                    ])
                 </div>
                                 
                 <div class="card-footer">

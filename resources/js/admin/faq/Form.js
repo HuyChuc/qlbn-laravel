@@ -8,10 +8,12 @@ Vue.component('faq-form', {
                 title:  '' ,
                 content:  '' ,
                 enabled:  false ,
-                image:  ''
+                cat_id:  '' ,
                 
             },
-            mediaCollections: ['gallery']
+            props: [
+                'categories'
+            ]
         }
     }
 

@@ -29,7 +29,7 @@ class StoreFaq extends FormRequest
             'title' => ['required', 'string'],
             'content' => ['nullable', 'string'],
             'enabled' => ['required', 'boolean'],
-            'image' => ['required', 'string'],
+            'cat_id' => ['nullable', 'string'],
             
         ];
     }
@@ -46,5 +46,12 @@ class StoreFaq extends FormRequest
         //Add your code for manipulation with request data here
 
         return $sanitized;
+    }
+
+    public function getCatId(){
+        if ($this->has('categories')){
+            return $this->get('categories')['id'];
+        }
+        return null;
     }
 }

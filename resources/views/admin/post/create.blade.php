@@ -29,7 +29,7 @@
                     <div class="col-md-12 col-lg-12 col-xl-5 col-xxl-4">
                         @include('admin.post.components.form-elements-right')
                         @include('brackets/admin-ui::admin.includes.media-uploader', [
-                            'mediaCollection' => app(App\Models\Post::class)->getMediaCollection('gallery'),
+                            'mediaCollection' => app(App\Models\Post::class)->getMediaCollection('cover'),
                             'label' => 'Ảnh đại diện'
                         ])
                     </div>

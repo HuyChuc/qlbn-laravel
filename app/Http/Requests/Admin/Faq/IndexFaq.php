@@ -25,7 +25,7 @@ class IndexFaq extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id,title,enabled,image|nullable',
+            'orderBy' => 'in:id,enabled,cat_id|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',

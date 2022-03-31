@@ -5,12 +5,11 @@
 <section id="middle">
 
     <div class="content_wrap r_sidebar">
-
+        
             <!--_________________________ Start Content _________________________ -->				
         <section id="content" role="main">
             <div class="entry">
                 <section class="blog opened-article">
-
                     <!--_________________________ Start Standard Article _________________________ -->
                     <article class="post type-post status-publish format-standard hentry category-blog-post category-medical category-text-posts tag-blog tag-image-2">
                         <div class="cmsms_info">

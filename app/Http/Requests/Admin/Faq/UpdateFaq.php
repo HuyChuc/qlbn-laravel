@@ -29,7 +29,7 @@ class UpdateFaq extends FormRequest
             'title' => ['sometimes', 'string'],
             'content' => ['nullable', 'string'],
             'enabled' => ['sometimes', 'boolean'],
-            'image' => ['sometimes', 'string'],
+            'cat_id' => ['nullable', 'string'],
             
         ];
     }
@@ -47,5 +47,11 @@ class UpdateFaq extends FormRequest
         //Add your code for manipulation with request data here
 
         return $sanitized;
+    }
+    public function getCatId(){
+        if ($this->has('categories')){
+            return $this->get('categories')['id'];
+        }
+        return null;
     }
 }

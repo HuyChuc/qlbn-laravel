@@ -28,7 +28,11 @@
 
                         <div class="col-md-12 col-lg-12 col-xl-5 col-xxl-4">
                             @include('admin.post.components.form-elements-right', ['showHistory' => true])
-                           
+                            @include('brackets/admin-ui::admin.includes.media-uploader', [
+                                'mediaCollection' => app(App\Models\Post::class)->getMediaCollection('cover'),
+                                'media' => $post->getMedia('cover'),
+                                'label' => 'Ảnh đại diện'
+                            ])
                         </div>
                     </div>
                     

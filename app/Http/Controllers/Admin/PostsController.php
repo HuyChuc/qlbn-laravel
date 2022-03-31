@@ -22,7 +22,7 @@ use Illuminate\View\View;
 
 class PostsController extends Controller
 {
-
+   
     /**
      * Display a listing of the resource.
      *
@@ -80,7 +80,7 @@ class PostsController extends Controller
         $sanitized = $request->getSanitized();
 
         // Store the Post
-        $post = Post::create($request->validated());
+        //$post = Post::create($request->validated());
         $post = Post::create($sanitized);
 
         if ($request->ajax()) {

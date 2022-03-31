@@ -11,7 +11,7 @@ Vue.component('post-form', {
                 published_at:  '' ,
                 enabled:  false ,
             },
-            mediaCollections: ['gallery']
+            mediaCollections: ['cover']
         }
     }
 
