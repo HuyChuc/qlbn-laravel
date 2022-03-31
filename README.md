@@ -1,31 +1,16 @@
 install composer
 
-composer create-project --prefer-dist laravel/laravel:^8.0 demo
-cd demo
+#npm install
+
+#npm run dev
 
 
-################ --ignore-platform-reqs
-
-composer require brackets/craftable
-composer require --dev brackets/admin-generator
-
-
-#config database
-
-php artisan craftable:install
-
-#generate pass: 0Wo1gouAI8
-
-npm install
-npm run dev
-
-
-php artisan serve
+#Run: php artisan serve
 
 #make migration table
 php artisan make:migration create_faq_table
 
-#file
+#file example
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -68,3 +53,8 @@ php artisan migrate
 php artisan admin:generate faq
 
 npm run dev
+
+
+![1](https://user-images.githubusercontent.com/18664928/160970565-86657980-a6d3-42cb-a784-e70515e4053d.JPG)
+![2](https://user-images.githubusercontent.com/18664928/160970571-8bcd0bb6-cffc-42d4-b59f-7178aa57fbf4.JPG)
+
