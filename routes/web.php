@@ -109,3 +109,78 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('customers')->name('customers/')->group(static function() {
+            Route::get('/',                                             'CustomersController@index')->name('index');
+            Route::get('/create',                                       'CustomersController@create')->name('create');
+            Route::post('/',                                            'CustomersController@store')->name('store');
+            Route::get('/{customer}/edit',                              'CustomersController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'CustomersController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{customer}',                                  'CustomersController@update')->name('update');
+            Route::delete('/{customer}',                                'CustomersController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('customers-histories')->name('customers-histories/')->group(static function() {
+            Route::get('/',                                             'CustomersHistoryController@index')->name('index');
+            Route::get('/create',                                       'CustomersHistoryController@create')->name('create');
+            Route::post('/',                                            'CustomersHistoryController@store')->name('store');
+            Route::get('/{customersHistory}/edit',                      'CustomersHistoryController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'CustomersHistoryController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{customersHistory}',                          'CustomersHistoryController@update')->name('update');
+            Route::delete('/{customersHistory}',                        'CustomersHistoryController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('medicines')->name('medicines/')->group(static function() {
+            Route::get('/',                                             'MedicineController@index')->name('index');
+            Route::get('/create',                                       'MedicineController@create')->name('create');
+            Route::post('/',                                            'MedicineController@store')->name('store');
+            Route::get('/{medicine}/edit',                              'MedicineController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'MedicineController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{medicine}',                                  'MedicineController@update')->name('update');
+            Route::delete('/{medicine}',                                'MedicineController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('posts-comments')->name('posts-comments/')->group(static function() {
+            Route::get('/',                                             'PostsCommentController@index')->name('index');
+            Route::get('/create',                                       'PostsCommentController@create')->name('create');
+            Route::post('/',                                            'PostsCommentController@store')->name('store');
+            Route::get('/{postsComment}/edit',                          'PostsCommentController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'PostsCommentController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{postsComment}',                              'PostsCommentController@update')->name('update');
+            Route::delete('/{postsComment}',                            'PostsCommentController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('customers-prescriptions')->name('customers-prescriptions/')->group(static function() {
+            Route::get('/',                                             'CustomersPrescriptionController@index')->name('index');
+            Route::get('/create',                                       'CustomersPrescriptionController@create')->name('create');
+            Route::post('/',                                            'CustomersPrescriptionController@store')->name('store');
+            Route::get('/{customersPrescription}/edit',                 'CustomersPrescriptionController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'CustomersPrescriptionController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{customersPrescription}',                     'CustomersPrescriptionController@update')->name('update');
+            Route::delete('/{customersPrescription}',                   'CustomersPrescriptionController@destroy')->name('destroy');
+        });
+    });
+});
